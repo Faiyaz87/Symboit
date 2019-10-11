@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="layout/header :: pageHeader"></head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" th:href="@{/css/main.css}"/>
 <title>SYMBIOT</title>
@@ -8,4 +8,5 @@
 <body>
 <span class="test" th:text="'Hello, ' + ${message}"></span>
 </body>
+<footer th:replace="layout/footer :: pageFooter"></footer>
 </html>
