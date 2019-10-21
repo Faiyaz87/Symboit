@@ -1,5 +1,7 @@
 package com.symbiot.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +15,8 @@ public class UserServiceImpl implements IUserService {
 	UserRepository userRepository;
 
 	@Override
-	public User getUserByLogin(String login) {
-		return userRepository.findById(1l).get();
+	public List<User> getUserByLogin(String Login) {
+		return userRepository.findByLogin(Login);
 	}
 
 }

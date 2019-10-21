@@ -18,7 +18,7 @@ public class SymbiotWebApplicationTests {
 	
 	@Test
 	public void test() {
-		System.out.println("User : "+UserService.getUserByLogin("Test"));
+		System.out.println("User : "+UserService.getUserByLogin("Faiyaz87@gmail.com"));
 	}
 
 }

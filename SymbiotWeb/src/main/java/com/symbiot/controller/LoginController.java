@@ -1,5 +1,7 @@
 package com.symbiot.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,9 +24,20 @@ public class LoginController {
 	
 	@RequestMapping("/login")
 	public String login(Model model,Login login) {
-		User userDtls = userService.getUserByLogin(login.getUsername());
-		System.out.println("userDtls : "+userDtls.toString());
-		return "login";
+		List<User> userDtlList = userService.getUserByLogin(login.getUsername());
+		if (userDtlList != null && userDtlList.size() == 1) {
+			User usrObj = userDtlList.get(0);
+			if (usrObj.getPassword().equals(login.getPassword())) {
+				model.addAttribute("USR_OBJ", usrObj);
+				return "dashboard";
+			}else {
+				model.addAttribute("MSG", "Incorrect username or password.");
+				return "login";
+			}
+		}else {
+			model.addAttribute("MSG", "Incorrect username or password.");
+			return "login";
+		}
 	}
 
 }
