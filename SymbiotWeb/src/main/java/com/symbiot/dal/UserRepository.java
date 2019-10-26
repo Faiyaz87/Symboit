@@ -8,5 +8,5 @@ import org.springframework.data.repository.Repository;
 import com.symbiot.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-	List<User> findByLogin(String Login);
+	User findByLogin(String Login);
 }

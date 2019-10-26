@@ -6,6 +6,6 @@ import com.symbiot.entity.User;
 
 public interface IUserService {
 	
-	public List<User> getUserByLogin(String login);
+	public User getUserByLogin(String login);
 
 }
