@@ -117,3 +117,33 @@ COLLATE = utf8mb4_0900_ai_ci;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+CREATE TABLE symbiot.device (
+	device_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	devicename varchar(100) NULL,
+	devicetype varchar(100) NULL,
+	mac varchar(100) NULL,
+	adddate TIMESTAMP NULL,
+	datastr varchar(100) NULL,
+	laststatus INT NULL,
+	PRIMARY KEY (`device_id`),
+  UNIQUE INDEX `id_UNIQUE` (`device_id` ASC) VISIBLE
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE symbiot.devicemapping (
+	devicemapping_Id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	account_Id INT NOT NULL,
+	user_Id INT NOT NULL,
+	device_Id INT NOT NULL,
+	mappingstatus INT NOT NULL,
+	PRIMARY KEY (`devicemapping_Id`),
+  UNIQUE INDEX `id_UNIQUE` (`devicemapping_Id` ASC) VISIBLE
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
