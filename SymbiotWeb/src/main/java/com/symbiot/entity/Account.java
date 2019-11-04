@@ -1,8 +1,11 @@
 package com.symbiot.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -19,8 +22,8 @@ public class Account {
 	private String email;
 	private String phone;
 	
-	@OneToOne(mappedBy = "account")
-	private User user;
+	@OneToMany(mappedBy = "account")
+	private List<User> user;
 
 	public long getAccount_Id() {
 		return account_Id;
@@ -72,11 +75,11 @@ public class Account {
 		this.phone = phone;
 	}
 
-	public User getUser() {
+	public List<User> getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(List<User> user) {
 		this.user = user;
 	}
 

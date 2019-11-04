@@ -16,9 +16,6 @@ public class SymbiotWebApplicationTests {
 	@Autowired
 	IUserService UserService; 
 	
-	@Test
-	public void test() {
-		System.out.println("User : "+UserService.getUserByLogin("Faiyaz87@gmail.com"));
-	}
+
 
 }

@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -28,7 +29,7 @@ public class User {
 	@JoinColumn(name = "role_Id", referencedColumnName = "role_Id",insertable = false, updatable = false)
 	private Role role;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "account_Id", referencedColumnName = "account_id",insertable = false, updatable = false)
 	private Account account;
 	

@@ -7,8 +7,31 @@
 <body>
 <div th:replace="layout/header :: pageHeader"></div>
 
-Welcome to dashboard 
-<div th:text="${USR_OBJ}">[...]</div>
+Welcome  <div th:text="${USR_OBJ.name}"></div>
+<div th:substituteby="layout/header :: navbar"></div>
+    <h1>Device list</h1>
+  
+    <table class="table table-bordered table-hover table-striped">
+      <tr>
+        <th>DeviceId</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>MAC</th>
+		<th>Added On</th>
+		<th>Data</th>
+		<th>Status</th>
+      </tr>
+      <tr th:each="device : ${USR_DEV}">
+        <td th:text="${device.device_Id}">Onions</td>
+        <td th:text="${device.devicename}">2.41</td>
+        <td th:text="${device.devicetype}">yes</td>
+        <td th:text="${device.mac}">yes</td>
+        <td th:text="${device.adddate}">yes</td>
+        <td th:text="${device.datastr}">yes</td>
+        <td th:text="${device.laststatus}">yes</td>
+      </tr>
+    </table>
+
 </body>
 <footer th:replace="layout/footer :: pageFooter"></footer>
 </html>

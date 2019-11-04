@@ -1,5 +1,6 @@
 package com.symbiot.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,36 +12,36 @@ public class DeviceMapping {
 	
 	@Id
 	@GeneratedValue
-	private long devicemapping_Id;
-	private long account_Id;
-	private long user_Id;
-	private long device_Id;
+	private long devicemappingId;
+	private long accountId;
+	private long userId;
+	private long deviceId;
 	private long mappingstatus;
 	
 	
-	public long getDevicemapping_Id() {
-		return devicemapping_Id;
+	public long getDevicemappingId() {
+		return devicemappingId;
 	}
-	public void setDevicemapping_Id(long devicemapping_Id) {
-		this.devicemapping_Id = devicemapping_Id;
+	public void setDevicemappingId(long devicemappingId) {
+		this.devicemappingId = devicemappingId;
 	}
-	public long getAccount_Id() {
-		return account_Id;
+	public long getAccountId() {
+		return accountId;
 	}
-	public void setAccount_Id(long account_Id) {
-		this.account_Id = account_Id;
+	public void setAccountId(long accountId) {
+		this.accountId = accountId;
 	}
-	public long getUser_Id() {
-		return user_Id;
+	public long getUserId() {
+		return userId;
 	}
-	public void setUser_Id(long user_Id) {
-		this.user_Id = user_Id;
+	public void setUserId(long userId) {
+		this.userId = userId;
 	}
-	public long getDevice_Id() {
-		return device_Id;
+	public long getDeviceId() {
+		return deviceId;
 	}
-	public void setDevice_Id(long device_Id) {
-		this.device_Id = device_Id;
+	public void setDeviceId(long deviceId) {
+		this.deviceId = deviceId;
 	}
 	public long getMappingstatus() {
 		return mappingstatus;
@@ -48,7 +49,6 @@ public class DeviceMapping {
 	public void setMappingstatus(long mappingstatus) {
 		this.mappingstatus = mappingstatus;
 	}
-	
 	
 	
 
